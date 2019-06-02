@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="enter_numbers">Enter numbers:</string>
+    <string name="btn_calculate">Calculate</string>
+    <string name="enter_first">Enter dividend</string>
+    <string name="enter_second">Enter divisor</string>
+    <string name="invalid_operation">Invalid operation</string>
+    <string name="enter_text">Enter text</string>
+    <string name="send_back">Send</string>
+    <string name="send_result">Send result</string>
+    <string name="send_mail">Send</string>
+    <string name="send_email">Send</string>
+    <string name="message">Message:</string>
+    <string name="title">TItle:</string>
+    <string name="send_to">Send to:</string>
+    <string name="incomplete_entry_error">There are incomplete fields. Please complete them.</string>
+    <string name="send_email_action">Send email</string>
+    <string name="compose_email">Compose email</string>
+    <string name="invalid_email_error">Invalid email address.</string>
+</resources>

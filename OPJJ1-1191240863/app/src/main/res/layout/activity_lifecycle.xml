@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp"
+        android:text="@string/enter_numbers" />
+
+    <EditText
+        android:id="@+id/input_first"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_first"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/input_second"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_second"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/label_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/btn_calculate"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/btn_send"
+            android:text="@string/btn_calculate" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_above="@id/btn_email_form"
+            android:text="@string/send_result" />
+
+        <Button
+            android:id="@+id/btn_email_form"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/compose_email"/>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

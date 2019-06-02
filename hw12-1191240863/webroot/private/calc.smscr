@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+			}
+			th {
+				text-align: left;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Zbrajanje</h1>
+		<table>
+			{$= "<tr><th>a</th><td>" "a" 1 @tparamGet "</td></tr><tr><th>b</th><td>" "b" 2 @tparamGet "</td></tr><tr><th>a+b</th><td>" "zbroj" 3 @tparamGet "</td></tr>" $}
+		</table>
+	</body>
+</html>

@@ -1,0 +1,11 @@
+Ugnijezdjene for petlje.
+{$FOR ii 1 2 3$}
+  {$= @func$}
+  {$FoR jj 1 2$}
+    Depth 2.
+    {$for kk 3 @cos$}
+      {$= "Depth"3 3.0 3.0000$}
+    {$end$}
+    Depth 2
+  {$EnD$}
+{$enD$}

@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta charset="utf-8" />
+		<title>Background Color</title>
+	</head>
+	<body>
+{$ = "message" "x" @tparamGet $} Želite li  <a href="/index2.html">natrag</a>?
+	</body>
+</html>

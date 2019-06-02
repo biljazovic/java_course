@@ -1,0 +1,10 @@
+This is text.
+{$FOR jj 1 2 3$}{$END$}
+
+Also text \\\{$
+
+{$FOR kk 3 4$}
+{$=$}
+{$END$}
+
+Also text \\

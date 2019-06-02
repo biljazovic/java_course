@@ -1,0 +1,2 @@
+Text. {$ = "String string \n new line " 2.33 .2 12133 @abs + 23 - 52 * 11 * * / "-32\\" -32 -2.5$}
+Text. {$ FOR abs -23 @step $} {$ = "\"Inside for loop\" " $} {$end$}

@@ -1,0 +1,9 @@
+This is text. 
+{$ FOR i 1 2 3 $}
+  {$ = @echo $}
+  Another text.
+  {$ FoR j "32" @atan2 $}
+  	Now in two for loops.
+  {$ end $}
+{$ EnD $}
+Outside text

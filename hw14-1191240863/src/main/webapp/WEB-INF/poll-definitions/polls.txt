@@ -1,0 +1,2 @@
+Glasanje za omiljeni bend	Od sljedećih bendova, koji Vam je bend najdraži? Kliknite na link kako biste glasali!	bands.txt
+Glasanje za omiljeni Star Wars film	Od sljedećih filmova, koji Vam je najdraži? Kliknite na link kako biste glasali!	movies.txt

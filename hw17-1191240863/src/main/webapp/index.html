@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<style>
+		#tags button {
+			background-color: purple;
+			color:white;
+			font-size: 15px;
+			border-radius: 10px;
+			font-variant: small-caps;
+			border: 2px solid white;
+		}
+		#tags button:hover {
+			color:black;
+			background-color: white;
+			border: 2px solid black;
+		}
+		#thumbnails img {
+			padding: 5px;
+		}
+		#thumbnails img:hover {
+			padding: 0px;
+			border: 5px solid purple;
+		}
+		#picture img {
+			max-width: 100%;
+			width: 800px;
+		}
+		#picture figcaption {
+			text-align: left;
+			font-style: italic;
+			font-size: 18px;
+		}
+		.tag {
+			background-color: purple;
+			color:white;
+			font-size: 15px;
+			border: 2px solid white;
+			font-variant: small-caps;
+			padding:3px;
+		}
+	</style>
+	<title>Gallery of Van Gogh paintings</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="js/htmlescaping.js"></script>
+	<script type="text/javascript">
+		function showPicture(picture) {
+			var pictureElement = document.getElementById('picture');
+			pictureElement.innerHTML = '';
+			let figureElement = document.createElement('figure');
+			let imgElement = document.createElement('img');
+			let captionElement = document.createElement('figcaption');
+			let tagElement = document.createElement('figcaption');
+
+			captionElement.innerHTML = htmlEscape(picture.description);
+			imgElement.src = 'rest/pictures/picture/'+htmlEscape(picture.fileName);
+			
+			for (let i = 0; i < picture.tags.length; i++) {
+				let tag = document.createElement('span');
+				tag.className = "tag";
+				tag.innerHTML = htmlEscape(picture.tags[i]);
+				tagElement.appendChild(tag);
+			}
+			
+			figureElement.appendChild(captionElement);
+			figureElement.appendChild(imgElement);
+			figureElement.appendChild(tagElement);
+			pictureElement.appendChild(figureElement);
+		}
+		function showThumbnails(tag) {
+			$.ajax({
+				url: "rest/pictures/tag/"+tag,
+				dataType: "json",
+				success: function(data) {
+					var thumbnails = document.getElementById('thumbnails');
+					if (data.length == 0) {
+						thumbnails.innerHTML = "No pictures with this tag.";
+					} else {
+						thumbnails.innerHTML = '';
+						for (let i = 0; i < data.length; i++) {
+							let fileName = htmlEscape(data[i].fileName);
+							let imgElement = document.createElement('img');
+							imgElement.src = 'rest/pictures/thumbnail/'+fileName;
+							imgElement.onclick = function() {
+								showPicture(data[i]);
+							};
+							thumbnails.appendChild(imgElement);
+						}
+					}
+				}
+			});
+		}
+		$(document).ready(
+			function() {
+				$.ajax({
+					url: "rest/pictures/tag",
+					dataType: "json",
+					success: function(data) {
+						var tags = document.getElementById('tags');
+						if (data.length == 0) {
+							tags.innerHTML = 'No tags.';
+						} else {
+							tags.innerHTML = '';
+							for (let i = 0; i < data.length; i++) {
+								let tag = htmlEscape(data[i]);
+								let buttonElement = document.createElement('button');
+								buttonElement.innerHTML = tag;
+								buttonElement.onclick = function() {
+									showThumbnails(tag)
+								};
+								tags.appendChild(buttonElement);
+							}
+						}
+					}
+				});
+			}
+		);
+	</script>
+</head>
+<body>
+	<h1>Gallery of Vincent van Gogh paintings</h1>
+	<h3>Click on the tag to show images with that tag.</h3>
+	<p><div id="tags"></div>
+	<p><div id="thumbnails"></div>
+	<div id="picture"></div>
+</body>
+</html>
